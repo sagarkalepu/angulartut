@@ -21,6 +21,7 @@ export class TodoService{
 
     viewTodo = new EventEmitter<number>();
     todosEvent = new EventEmitter<{id: number, title: string, description: string, status: string}[]>();
+    addTodo = new EventEmitter<boolean>();
     public getTodoList() {
         return this.todos.map((todo) => ({title: todo.title, id: todo.id}));
     }

@@ -9,6 +9,7 @@ import {TodoService} from "../../services/todo.service";
 export class TodoComponent implements OnInit {
 
   public todo: {id: number, title: string, description: string} ;
+  show: boolean = true;
   constructor(private todoService: TodoService) { 
 
   }
@@ -18,6 +19,11 @@ export class TodoComponent implements OnInit {
       console.log(id);
       this.todo = this.todoService.getTodo(id)[0]
     })
+
+    
+  this.todoService.addTodo.subscribe((data : boolean) => {
+    this.show = !data;
+  })
   }
   todoDone() {
     this.todoService.deleteTodo(this.todo.id);
