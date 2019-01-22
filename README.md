@@ -1,2 +1,0 @@
-# angulartut
-my angular lesons

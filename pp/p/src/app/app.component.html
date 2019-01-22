@@ -1,0 +1,19 @@
+<!--The content below is only a placeholder and can be replaced.-->
+
+<div>
+
+	<button (click) = "tgle($event)"></button>	
+	<div *ngIf = "show == 'even'">
+		<p *ngFor = "let even of onlyEven" [ngStyle] = "{backgroundColor:even % 2 === 0 ? 'yellow' : 'cyan'}">{{even}}</p>
+	</div>
+	<div *ngIf = "show == 'odd'">
+		<p *ngFor = "let odd of onlyOdd" [ngStyle] = "{backgroundColor:odd % 2 === 0 ? 'yellow' : 'cyan'}">{{odd}}</p>
+	</div>
+	
+	
+	<p basicHighlight>hellow orld</p>
+	<p appBetterHighlight defaultColor = "pink" highlightColor = "red"> hellow world</p>
+</div>
+
+
+<router-outlet></router-outlet>
