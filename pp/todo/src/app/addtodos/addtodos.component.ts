@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {TodoService} from "../../services/todo.service";
 
 @Component({
   selector: 'app-addtodos',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddtodosComponent implements OnInit {
 
-  constructor() { }
-
+  constructor(private todoService: TodoService) { }
+  show:boolean = false;
   ngOnInit() {
+    this.todoService.addTodo.subscribe((data) => {
+      this.show = data;
+    })
   }
 
 }
